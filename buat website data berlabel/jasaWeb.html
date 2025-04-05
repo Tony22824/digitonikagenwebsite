@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digittoniik - Agen Website Profesional</title>
+    <link rel="icon" href="https://i.ibb.co.com/0p9HYXK8/IMG-20250331-104153.jpg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background with overlay */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://i.ibb.co.com/YVvvYNn/Screenshot-2025-02-25-21-02-15-03.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        /* Container with glass effect */
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(to right, #007bff, #00bfff);
+            border-radius: 4px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #222;
+            line-height: 1.4;
+        }
+
+        .price-range {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 15px;
+            background: linear-gradient(135deg, #007bff, #00bfff);
+            color: white;
+            border-radius: 30px;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: linear-gradient(135deg, #007bff, #00bfff);
+            color: white;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 14px;
+            padding: 15px;
+        }
+
+        td {
+            padding: 14px 15px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(0, 123, 255, 0.05);
+        }
+
+        tr:hover {
+            background-color: rgba(0, 123, 255, 0.1);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* WhatsApp button */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #25d366, #1ebc57);
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #1ebc57, #25d366);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Back button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 500;
+            background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .back-btn i {
+            margin-right: 8px;
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(135deg, #ff1a1a, #ff4d4d);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                width: 95%;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            .price-range {
+                font-size: 14px;
+                padding: 4px 12px;
+            }
+            
+            th, td {
+                padding: 10px 8px;
+                font-size: 13px;
+            }
+            
+            .btn, .back-btn {
+                padding: 8px 15px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container -->
+    <div class="container fade-in">
+        <div class="header">
+            <h1>Daftar Layanan Digittoniik <br><span class="price-range">Rp 70.000 - Rp 200.000</span></h1>
+            <p style="margin-top: 15px; color: #555; font-weight: 500;">Dapatkan website profesional dengan tampilan interaktif</p>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Layanan</th>
+                    <th>Harga</th>
+                    <th>Pesan</th>
+                </tr>
+            </thead>
+            <tbody id="service-list"></tbody>
+        </table>
+    </div>
+    
+    <!-- Back button -->
+    <button class="back-btn fade-in" onclick="goHome()">
+        <i class="fas fa-home"></i> Kembali ke Home
+    </button>
+
+    <script>
+        const services = [
+            { name: "Frontend Website", price: 70000},
+            { name: "Backend Website", price: 70000},
+            { name: "Server Web", price: 200000 },
+            { name: "Aplikasi Web", price: 200000 },
+            { name: "Database", price: 200000},
+            { name: "Web Analisis", price: 200000 },
+            { name: "Graphic Web SEO", price: 100000}
+        ];
+
+        const tableBody = document.getElementById("service-list");
+
+        services.forEach(service => {
+            const row = document.createElement("tr");
+            const whatsappLink = `https://wa.me/6282325314552?text= Halo, ka Benar ini dengan agen pembuat web profesional digitonikweb, saya tertarik dengan jasa pembuatan website interaktif anda`
+            row.innerHTML = `
+                <td>${service.name}</td>
+                <td><strong>Rp ${service.price.toLocaleString()}</strong></td>
+                <td><a href="${whatsappLink}" class="btn" target="_blank"><i class="fab fa-whatsapp"></i> Pesan Sekarang</a></td>
+            `;
+
+            tableBody.appendChild(row);
+        });
+
+        // Add pulse animation to the first service for emphasis
+        if (tableBody.firstChild) {
+            tableBody.firstChild.classList.add("pulse");
+        }
+
+        // Function to go back to index.html
+        function goHome() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
+
